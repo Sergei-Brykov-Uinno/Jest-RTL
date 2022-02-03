@@ -1,0 +1,56 @@
+@import "./fonts";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body, html {
+    @apply h-full;
+  }
+
+  body {
+    @apply bg-gray-1 text-base;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+
+  h1 {
+    @apply text-xl1;
+  }
+
+  h2 {
+    @apply text-xl2;
+  }
+
+  #root {
+    @apply flex flex-col h-full;
+  }
+}
+
+@layer components {
+  .textField-label {
+    @apply inline-flex self-start text-xs text-dark pb-1.5 px-4;
+  }
+
+  .textField-base {
+    @apply py-3.5 px-4 text-base text-dark placeholder-gray-3 font-normal border border-gray-4 rounded bg-gray-6 focus:border-dark focus:ring-0 resize-none;
+
+    &.hasError {
+      @apply border-error;
+    }
+  }
+
+  .textField-messageBox {
+    @apply text-xs text-dark pt-1.5 px-4;
+  }
+
+  .textField-messageBox,
+  .textField-label {
+    &.hasError {
+      @apply text-error;
+    }
+  }
+}
